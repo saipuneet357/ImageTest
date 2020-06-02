@@ -1,15 +1,23 @@
 import cv2.cv2 as cv2
 import numpy as np
+import dlib
 
 
 
 def main():
-    img = cv2.imread(r'C:\Users\PUNEETH\Downloads\IMG_20190629_151046.jpg')
-    cv2.imshow('image',img)
-    cv2.waitKey(0)
+    cap = cv2.VideoCapture(0)
+    while(True):
+        # Capture frame-by-frame
+        ret, frame = cap.read()
+        frame = cv2.flip(frame,1)
+        cv2.imshow('frame',frame)
+        if cv2.waitKey(1) & 0xFF == ord('q'):
+            break
+
+    # When everything done, release the capture
+    cap.release()
     cv2.destroyAllWindows()
-    print(img)
-     
+
 
 if __name__ == "__main__":
     main()

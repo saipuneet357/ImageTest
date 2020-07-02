@@ -1,4 +1,5 @@
 import text_recog
+import text_search
 import numpy as np
 import cv2
 
@@ -44,9 +45,17 @@ cropped = res[rect[1]: rect[1] + rect[3], rect[0]: rect[0] + rect[2]]
 white_image = np.ones_like(image, np.uint8)*255
 reverse_mask = cv2.bitwise_not(white_image, white_image, mask=black_image)
 result = reverse_mask+res
+
+invert, text = text_recog.text_recognition_from_text(result)
+
+sites = text_search.list_of_sites(text)
+
+for site in sites:
+    print(site)
+
 while(True):
     cv2.imshow('blackimage', result)
-    cv2.imshow('image', image)
+    cv2.imshow('invert', invert)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 

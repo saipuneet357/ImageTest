@@ -48,10 +48,12 @@ result = reverse_mask+res
 
 invert, text = text_recog.text_recognition_from_text(result)
 
-sites = text_search.list_of_sites(text)
+text_search.crawl(text)
 
-for site in sites:
-    print(site)
+# sites = text_search.list_of_sites(text)
+#
+# for site in sites:
+#     print(site)
 
 while(True):
     cv2.imshow('blackimage', result)

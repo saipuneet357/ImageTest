@@ -32,6 +32,6 @@ class MyImageDownloader(ImageDownloader):
 
 def crawl(key):
     google_crawler = BingImageCrawler(downloader_cls=MyImageDownloader, storage={
-                                      'root_dir': 'E:\capi\opencv\ImageTest\images'})
-    google_crawler.crawl(keyword=key, max_num=10)
+                                      'root_dir': 'E:\capi\opencv\ImageTest'})
+    google_crawler.crawl(keyword=key, max_num=1)
     return

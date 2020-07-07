@@ -49,55 +49,12 @@ result = reverse_mask+res
 invert, text = text_recog.text_recognition_from_text(result)
 
 text_search.crawl(text)
+image2 = cv2.imread("chanakya.jpg")
 
-# sites = text_search.list_of_sites(text)
-#
-# for site in sites:
-#     print(site)
 
+# image = cv2.resize(image, (600, 900))
 while(True):
     cv2.imshow('blackimage', result)
     cv2.imshow('invert', invert)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
-
-# for i in range(len(cnts)):
-#     cv2.drawContours(image, cnts, i, (0, 255, 0), 3)
-#     cv2.imshow('image', image)
-#     if cv2.waitKey(3000) & 0xFF == ord('q'):
-#         cv2.destroyAllWindows()
-#     print(len(cnts[i]))
-# 126
-# 1156
-# 348
-# 1839
-# 4232
-# 1
-
-
-# for i in range(len(cnts[3])):
-#     cv2.drawContours(image, cnts[3], i, (0, 255, 0), 3)
-#     cv2.imshow('image', image)
-#     if cv2.waitKey(1000) & 0xFF == ord('q'):
-#         cv2.destroyAllWindows()
-#     if 0xFF == ord('u'):
-#         break
-#
-# print(cnts[3])
-# print(total)
-# while(True):
-#     cv2.imshow('image', image)
-#     if cv2.waitKey(1) & 0xFF == ord('q'):
-#         break
-# invert,text = text_recog.text_recognition_from_text()
-#
-# print(total)
-# print(text)
-#
-# while(True):
-#     cv2.imshow('image', image)
-#     cv2.imshow('edged', edged)
-#     cv2.imshow('closed', closed)
-#     cv2.imshow('closed', gray_frame)
-#     if cv2.waitKey(1) & 0xFF == ord('q'):
-#         break

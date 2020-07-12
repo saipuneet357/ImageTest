@@ -6,7 +6,7 @@ import cv2
 
 def object_scan(object):
     # photo book
-    # image = cv2.resize(image, (600, 900))
+    object = cv2.resize(object, (600, 900))
     size = object.shape[0:2]
     black_image = np.zeros(size, np.uint8)
     # Grayscale, Gaussian blur
